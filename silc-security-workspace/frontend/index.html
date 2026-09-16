@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="SILC: Security Intelligence &amp; Log Correlation. Explain evidence, explore hypotheses, and document human decisions.">
+  <title>SILC · Security Intelligence &amp; Log Correlation</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script src="/assets/workspace.js" defer></script>
+  <script src="/assets/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to workspace</a>
+  <aside class="sidebar" aria-label="Workspace navigation">
+    <a class="brand" href="#overview" aria-label="SILC overview"><span class="brand-mark">S</span><span>SILC<span class="brand-sub">SECURITY INTELLIGENCE<br>&amp; LOG CORRELATION</span></span></a>
+    <div class="workspace-label">PORTFOLIO LAB <span>01</span></div>
+    <nav>
+      <a href="#overview" data-nav="overview"><span data-icon="grid"></span>Overview</a>
+      <a href="#alerts" data-nav="alerts"><span data-icon="shield"></span>Alert queue <span id="nav-count" class="nav-count">—</span></a>
+      <a href="#logs" data-nav="logs"><span data-icon="search"></span>Log explorer</a>
+      <a href="#upload" data-nav="upload"><span data-icon="upload"></span>Analyze logs</a>
+      <a href="#briefing" data-nav="briefing"><span data-icon="spark"></span>AI briefing</a>
+      <a href="#rules" data-nav="rules"><span data-icon="sliders"></span>Detection rules</a>
+    </nav>
+    <div class="sidebar-bottom">
+      <a class="guide-link" href="#guide"><span data-icon="book"></span>Project guide <span>↗</span></a>
+      <div class="local-card"><span data-icon="lock"></span><div>Local-first analysis<small>No live network monitoring</small></div></div>
+      <div class="profile"><span class="avatar">SI</span><div>Shafin's workspace<small>Cybersecurity portfolio</small></div></div>
+    </div>
+  </aside>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="breadcrumb">Workspace <span>/</span> <strong id="crumb">Overview</strong></div>
+      <div class="top-actions"><span class="connection" id="connection">Connecting…</span><button class="icon-btn" id="help-button" aria-label="Open project guide" title="Project guide"><span data-icon="help"></span></button></div>
+    </header>
+    <main id="main" tabindex="-1">
+      <div id="global-error" class="notice error" role="alert" hidden></div>
+      <div id="view" aria-busy="true"><div class="loading"><span class="spinner"></span> Loading your network lab…</div></div>
+    </main>
+    <footer class="footer"><span>SILC / Security Intelligence &amp; Log Correlation</span><span>Rule evidence first. Human decisions always.</span></footer>
+  </div>
+  <dialog id="detail" aria-labelledby="detail-title">
+    <div class="detail-top"><span class="eyebrow">ALERT INVESTIGATION</span><button class="icon-btn" id="close-detail" aria-label="Close investigation"><span data-icon="close"></span></button></div>
+    <div id="detail-body"></div>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <div id="chart-tooltip" class="chart-tooltip" role="tooltip" hidden></div>
+</body>
+</html>
