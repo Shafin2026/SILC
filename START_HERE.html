@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SILC · Start here</title>
+<style>
+:root { color-scheme:light; --ink:#18213d; --muted:#526078; --blue:#3655c7; --violet:#6941c6; --teal:#137567; --line:#dce3ef; }
+* { box-sizing:border-box; }
+body { margin:0; background:#f2f5fb; color:var(--ink); font:17px/1.75 Arial,Helvetica,sans-serif; }
+a { color:#2e48b5; text-underline-offset:4px; }
+a:hover { color:#6334af; }
+:focus-visible { outline:3px solid #7952c9; outline-offset:4px; }
+.page { width:min(1100px,calc(100% - 40px)); margin:38px auto; }
+header { padding:38px 44px; border-radius:24px; color:#fff; background:linear-gradient(120deg,#152243,#253b7b 65%,#594693); box-shadow:0 12px 40px #142e621c; }
+.brand { display:flex; align-items:center; gap:14px; font-weight:700; }
+.mark { display:grid; place-items:center; width:46px; height:46px; font-size:29px; background:linear-gradient(145deg,#bfcdff,#a0ecde); color:#182c63; border-radius:13px; }
+.eyebrow { font-size:12px; letter-spacing:1.8px; font-weight:700; }
+header .eyebrow { color:#c4d3fb; }
+h1 { font-size:clamp(32px,5vw,48px); line-height:1.2; letter-spacing:-1px; margin:28px 0 16px; max-width:720px; }
+header p { color:#e2e8ff; max-width:730px; margin:0; }
+.chips { display:flex; gap:9px; flex-wrap:wrap; margin-top:25px; }
+.chips span { border:1px solid #8ca6db66; background:#ffffff10; border-radius:30px; padding:5px 13px; font-size:13px; }
+.grid { display:grid; grid-template-columns:minmax(0,1.5fr) minmax(280px,1fr); gap:24px; margin-top:24px; align-items:start; }
+.card { background:#fff; border:1px solid var(--line); border-radius:20px; padding:30px; box-shadow:0 5px 18px #132e5510; }
+.card + .card { margin-top:24px; }
+h2 { margin:0 0 16px; font-size:24px; line-height:1.35; letter-spacing:-.3px; }
+h3 { font-size:18px; line-height:1.45; margin:0 0 7px; }
+p { margin:10px 0 16px; }
+.small { font-size:14px; color:var(--muted); }
+.step { display:grid; grid-template-columns:35px 1fr; gap:13px; margin:25px 0; }
+.num { width:34px; height:34px; border-radius:11px; display:grid; place-items:center; background:#ebe7fd; color:#5736a8; font-weight:700; }
+.step p:last-child { margin-bottom:0; }
+code { font:15px/1.6 ui-monospace,SFMono-Regular,Consolas,monospace; background:#ecf0fa; padding:3px 6px; border-radius:5px; overflow-wrap:anywhere; color:#263e8a; }
+.command { margin:14px 0; padding:15px 18px; background:#192646; color:#f1f4ff; border-radius:11px; font:17px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace; white-space:pre-wrap; user-select:all; }
+.note { background:#eaf7f2; border-left:4px solid var(--teal); border-radius:8px; padding:14px 17px; font-size:15px; }
+.note.violet { background:#f1edfd; border-color:var(--violet); }
+.note.amber { background:#fff6e9; border-color:#a76712; }
+ul,ol { padding-left:23px; }
+li { margin:9px 0; }
+.walk { list-style:none; padding:0; }
+.walk li { border-bottom:1px solid var(--line); padding:12px 0; margin:0; }
+.walk li:last-child { border-bottom:0; }
+.walk strong { display:block; color:#344da6; }
+details { margin:13px 0; border:1px solid var(--line); padding:12px 15px; border-radius:10px; }
+summary { cursor:pointer; font-weight:700; }
+details p { font-size:15px; margin-bottom:3px; }
+footer { padding:23px 4px; font-size:14px; color:var(--muted); text-align:center; }
+@media(max-width:780px) { .grid { grid-template-columns:1fr; } header { padding:28px; } .card { padding:23px; } }
+@media(max-width:450px) { .page { width:calc(100% - 22px); margin:15px auto; } header { padding:23px; } body { font-size:16px; } .card { padding:20px; } }
+@media print { body { background:white; } .page { width:100%; margin:0; } header { color:#18213d; background:white; box-shadow:none; border:1px solid #ddd; } header p,header .eyebrow { color:#18213d; } .grid { display:block; } .card { break-inside:avoid; box-shadow:none; margin:18px 0; } .command { background:#eee; color:#111; } }
+</style>
+</head>
+<body>
+<div class="page">
+<header>
+<div class="brand"><span class="mark" aria-hidden="true">S</span><div>SILC<div class="eyebrow">SECURITY INTELLIGENCE &amp; LOG CORRELATION</div></div></div>
+<h1>Your investigation workspace.<br>Ready to explore.</h1>
+<p>Start the app, follow a finding into its evidence, and explain your decision. This guide walks you through the first run on your Mac.</p>
+<div class="chips"><span>Interactive charts</span><span>Reasoning in every case</span><span>Optional local AI</span><span>Version 3.0</span></div>
+</header>
+<div class="grid">
+<div>
+<section class="card">
+<h2>Start on your Mac</h2>
+<p class="small">Keep all the extracted project files together. Open this complete version in a fresh folder.</p>
+<div class="step"><span class="num">1</span><div><h3>Check Python</h3><p>SILC uses <strong>Python 3.11, 3.12 or 3.13</strong>. If you need it, install Python 3.13 from the <a href="https://www.python.org/downloads/macos/">official Mac downloads</a>.</p><p class="small">No npm command or Node installation is needed to run this project.</p></div></div>
+<div class="step"><span class="num">2</span><div><h3>Drag the launcher into Terminal</h3><p>Open Terminal. Type <code>bash</code>, then press the <strong>space bar once</strong>.</p><p>Drag <strong>start.sh</strong> from the extracted folder in Finder into Terminal. Its full path will appear after <code>bash </code>.</p><p>Press <strong>Return</strong>.</p><div class="note">This works from any Terminal folder. You do not need to type <code>cd</code>.</div></div></div>
+<div class="step"><span class="num">3</span><div><h3>Wait for the browser to open</h3><p>The first run installs dependencies. Keep the internet connected and wait for setup to finish.</p><p>The app opens automatically. If it does not, open the local address printed in Terminal, usually <code>http://127.0.0.1:8000</code>.</p><p class="small">If that port is busy, the launcher chooses another between 8000 and 8005.</p></div></div>
+<div class="note violet"><strong>Keep Terminal open while using SILC.</strong><br>To stop it, click Terminal and press <strong>Control+C</strong>.</div>
+<details><summary>Already inside the folder in VS Code?</summary><p>Open Terminal → New Terminal. Confirm the terminal is in the project folder, then run:</p><div class="command">bash start.sh</div><p>A plain <code>cd</code> moves you to your home folder. If you are unsure where you are, use the drag-and-drop method above.</p></details>
+<details><summary>Can I double-click a launcher?</summary><p>You can try <strong>start.command</strong>. If macOS does not open it, use the Terminal method above with <strong>start.sh</strong>.</p></details>
+</section>
+<section class="card">
+<h2>Your first investigation</h2>
+<ol class="walk">
+<li><strong>1 · Overview</strong>Expect 11,000 synthetic events, 10 findings and five rules. Hover a chart to see its values. Click Critical.</li>
+<li><strong>2 · Reasoning</strong>Open the Possible SYN flood finding. Compare its 85 matching records with the threshold of 60. Read why service disruption remains unconfirmed.</li>
+<li><strong>3 · Evidence</strong>Inspect the matching event IDs and timestamps. A finding links to records you can check.</li>
+<li><strong>4 · Connections</strong>Explore the observed relationships. The hypothetical next stage has its own distinct label.</li>
+<li><strong>5 · Assessment</strong>Choose Investigating, write your next checks, and save. Export the case to keep a reviewable copy.</li>
+</ol>
+<p class="small">Try Log explorer to search all records. The overview charts and queue filters help narrow the findings.</p>
+</section>
+<section class="card">
+<h2>If something does not start</h2>
+<details><summary>“start.sh: No such file or directory”</summary><p>Terminal is looking in a different folder. Type <code>bash </code> and drag the actual <strong>start.sh</strong> file from Finder into Terminal, then press Return.</p></details>
+<details><summary>“package.json” or “npm run dev” error</summary><p>Start this project with <code>bash start.sh</code>. Its frontend is served by Python and does not need an npm build.</p></details>
+<details><summary>Python is missing or unsupported</summary><p>Install Python 3.13, close and reopen Terminal, then run the launcher again. Versions 3.11–3.13 are supported by this package.</p></details>
+<details><summary>Dependencies cannot download</summary><p>Check your internet connection and rerun the launcher. Keep the exact final error message if it still fails.</p></details>
+<details><summary>Browser says it cannot connect</summary><p>Check that Terminal is still running SILC. Use the exact local address it prints; the port may be 8001 instead of 8000.</p></details>
+<details><summary>All six ports are busy</summary><p>Stop an earlier SILC Terminal with Control+C, then rerun the new launcher. Other processes are never stopped automatically.</p></details>
+<details><summary>A saved note seems missing</summary><p>Notes belong to the same browser, local address and dataset. Changing ports or clearing browser data changes the available storage. Export important assessments.</p></details>
+</section>
+</div>
+<aside>
+<section class="card">
+<div class="eyebrow" style="color:#6941c6">YOUR REASONING WORKFLOW</div>
+<h2 style="margin-top:10px">Understand every flag</h2>
+<p>Each case explains its observation, trigger, confidence, missing evidence, alternatives and next checks.</p>
+<p>Model explanations have their own small <strong>Reasoning</strong> tab. Click a citation to open its matching evidence.</p>
+<div class="note">A score ranks review priority. It is not an attack probability.</div>
+</section>
+<section class="card">
+<h2>Try AI when you are ready</h2>
+<p><strong>Start with Offline briefing.</strong> It uses a clear rule template and works immediately without an account.</p>
+<p>For a local model, install and open <a href="https://ollama.com">Ollama</a>. In a <strong>second Terminal window</strong>, run:</p>
+<div class="command">ollama pull gemma3:4b</div>
+<p>Wait for the download. In SILC, choose <strong>AI briefing → Ollama (local)</strong>, select one finding and generate.</p>
+<p class="small">The model uses your Mac's memory and processing. Cloud providers require your own API setup and may charge for usage.</p>
+<p>See <strong>docs/AI_SETUP.md</strong> in VS Code for provider settings and troubleshooting.</p>
+</section>
+<section class="card">
+<h2>Explain it to a recruiter</h2>
+<p>“SILC turns network logs into evidence-linked investigations. Every finding explains why it was flagged. Optional AI adds an interpretation, and the analyst verifies the evidence and records the decision.”</p>
+<p>Open <strong>docs/INTERVIEW_GUIDE.md</strong> for a three-minute walkthrough, interview questions and resume wording.</p>
+<p class="small">Practice one complete case, then show the code and a change you can explain.</p>
+</section>
+<section class="card">
+<h2>What stays saved?</h2>
+<p>Saved assessments stay in this browser and local address. Model explanations and unsaved drafts last for this page session.</p>
+<div class="note amber"><strong>Export before reloading</strong> if you want to keep the current model explanation. Uploaded CSVs expire after an hour, eviction or server restart.</div>
+<p class="small">Use synthetic or sanitized data. Keep private API keys and confidential logs out of GitHub.</p>
+</section>
+<section class="card">
+<h2>Your next steps</h2>
+<ul><li>Finish the first investigation.</li><li>Save your own assessment.</li><li>Complete the browser checks in docs/VALIDATION.md.</li><li>Make one useful frontend change.</li><li>Record it in docs/MY_CONTRIBUTIONS.md.</li><li>Add screenshots and source files to your GitHub repository.</li></ul>
+</section>
+</aside>
+</div>
+<footer>SILC · Understand the evidence. Record your judgment.</footer>
+</div>
+</body>
+</html>
