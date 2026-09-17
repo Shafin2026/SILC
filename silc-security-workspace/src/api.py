@@ -33,7 +33,15 @@ UPLOADS: OrderedDict = OrderedDict()
 AI_LOCK = asyncio.Lock()
 app = FastAPI(title="SILC · Security Intelligence & Log Correlation", version="3.0.0",
               description="Local defensive lab. Synthetic demo; no live monitoring. AI drafts need human review.")
-app.add_middleware(TrustedHostMiddleware, allowed_hosts=["127.0.0.1", "localhost", "testserver"])
+app.add_middleware(
+    TrustedHostMiddleware,
+    allowed_hosts=[
+        "127.0.0.1",
+        "localhost",
+        "testserver",
+        "*.vercel.app",
+    ],
+)
 
 
 class BodyLimit:
